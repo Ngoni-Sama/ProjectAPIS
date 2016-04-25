@@ -1,0 +1,87 @@
+/* Various styles */
+h1 {
+    margin-bottom: 0;
+}
+
+.main-background {
+    background-color: #DDD;
+    overflow-x: hidden;
+    height: 105%;
+}
+.fruit {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+.fruit-container {
+    position: relative;
+}
+.fruit-check {
+    background: rgb(0, 180, 0);
+    color: rgb(250, 250, 250);
+    border-radius: 50%;
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    font-size: 36px;
+    right: 8px;
+    bottom: 8px;
+}
+
+.main-container {
+    margin: 16px;
+    z-index: 2;
+}
+
+/*Mobile breakpoints*/
+@media (max-width: 960px) {
+    .main-background {
+        padding: 0;
+        background-color: #FFF;
+        width: 100%;
+        height: 100%;
+    }
+
+    .main-container {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: 1;
+    }
+}
+
+/* TOOLBAR */
+.toolbar-primary{
+    height: 128px;
+    min-height: 128px;
+    max-height: 128px;
+}
+.toolbar-overlap{
+    margin-top: -160px;
+    padding-top: 79px;
+}
+
+@media only screen and (max-width: 959px) and (min-width: 0) and (orientation: portrait){
+    .toolbar-primary{
+        height: 56px;
+        min-height: 56px;
+        max-height: 56px;
+    }
+    .toolbar-overlap{
+        margin-top: 0;
+        padding-top: 0;
+    }
+}
+@media only screen and (max-width: 959px) and (min-width: 0) and (orientation: landscape){
+    .toolbar-primary{
+        height: 48px;
+        min-height: 48px;
+        max-height: 48px;
+        margin-bottom: 0;
+    }
+    .toolbar-overlap{
+        margin-top: 0;
+        padding-top: 0;
+    }
+}
