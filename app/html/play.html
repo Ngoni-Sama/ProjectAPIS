@@ -1,18 +1,21 @@
 <md-content layout-padding flex="65" class="md-whiteframe-z2 main-container">
     <canvas id="line" class="chart chart-line" chart-data="data"
         chart-labels="labels" chart-legend="true" chart-series="series"
-        chart-click="onClick" >
+        chart-click="onClick" chart-options="{animation : false}">
     </canvas>
 </md-content>
 
-<md-content layout="column" flex="35" layout-align="center center" class="md-whiteframe-z2 main-container">
-    <h1 class="md-display-3">Selecciona tu jugo</h1>
+<md-content layout-padding layout="column" flex="35" layout-align="center center" class="md-whiteframe-z2 main-container">
+    <h1 class="md-display-3">Échale jugo</h1>
 
-    <h4 class="md-title">
-        ¿Qué tipo de jugo te gustaría titular?
-    </h4>
+    <h4 class="md-title">PH Actual: {{currentPH}}</h4>
+    <img style="height:128px" ng-src="{{bottle}}" alt="" />
 
-
-    <md-button class="md-raised md-primary" ng-click="increase()" ng-disabled="increaseDisabled">Comenzar!</md-button>
+    <div>
+        <md-button class="md-raised md-primary" ng-click="increase()" ng-disabled="increaseDisabled">
+            <span ng-if="!increaseDisabled">Echar jugo</span>
+            <span ng-if="increaseDisabled">Se acabó el jugo :(</span>
+        </md-button>
+    </div>
 
 </md-content>
