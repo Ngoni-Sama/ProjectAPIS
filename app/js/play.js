@@ -14,7 +14,7 @@ app.controller("PlayCtrl", function($scope, $state, $stateParams, $mdDialog){
     $scope.series = [];
     $scope.data = [ [] ];
     $scope.increaseDisabled = false;
-    $scope.bottle = "/app/img/chemistry-flash-hi.png";
+    $scope.bottle = "/img/chemistry-flash-hi.png";
     $scope.currentPH = juicePH[juicePH.length-1];
 
     $scope.increase = function(){
@@ -27,14 +27,14 @@ app.controller("PlayCtrl", function($scope, $state, $stateParams, $mdDialog){
         }
         if(value == juiceEqPoint){
             $scope.bottle = "/app/img/chemistry-flash-blue.png"
-            showDialog();
+            showDialog('app/html/eq_dialog.html');
         }
     };
 
-    function showDialog() {
+    function showDialog(template) {
         $mdDialog.show({
             controller: DialogController,
-            templateUrl: 'app/html/eq_dialog.html',
+            templateUrl: template,
             parent: angular.element(document.body),
             clickOutsideToClose:false,
         });
@@ -51,7 +51,7 @@ app.controller("PlayCtrl", function($scope, $state, $stateParams, $mdDialog){
         };
     }
 
-    //showDialog();
+    showDialog("app/html/start_dialog.html");
 
     $scope.data[0].push(juicePH.pop());
     $scope.labels.push(juiceLabels.pop());
