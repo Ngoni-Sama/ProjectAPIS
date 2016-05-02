@@ -45,11 +45,6 @@ app.controller("PlayCtrl", function($scope, $state, $stateParams, $mdDialog){
             templateUrl: 'app/html/eq_dialog.html',
             parent: angular.element(document.body),
             clickOutsideToClose:true,
-        })
-        .then(function(answer) {
-            $scope.status = 'You said the information was "' + answer + '".';
-        }, function() {
-            $scope.status = 'You cancelled the dialog.';
         });
     };
     function DialogController($scope, $mdDialog) {
