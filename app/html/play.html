@@ -1,14 +1,22 @@
-<md-content layout-padding flex="65" class="md-whiteframe-z2 main-container">
-    <canvas id="line" class="chart chart-line" chart-data="data"
-        chart-labels="labels" chart-legend="true" chart-series="series"
-        chart-click="onClick" chart-options="{animation : false}">
+<md-content layout-padding flex="65" class="md-whiteframe-z2 main-container" style="padding-left:32px;">
+    <div layout="row" layout-align="center center" style="position:absolute;top:164px;margin-left:-32px;transform:rotate(270deg);">
+        pH
+    </div>
+
+    <canvas style="margin-left:0px" id="line" class="chart chart-line" chart-data="data"
+        chart-labels="labels"
+        chart-click="onClick" chart-options="{animation : false, xAxisID: 'Test'}">
     </canvas>
+    <div layout="row" layout-align="center center">
+        ml Volumen de NaOH
+    </div>
+
 </md-content>
 
 <md-content layout-padding layout="column" flex="35" layout-align="center center" class="md-whiteframe-z2 main-container">
     <h1 class="md-display-3">Échale jugo</h1>
 
-    <h4 class="md-title">PH Actual: {{currentPH}}</h4>
+    <h4 class="md-title">pH Actual: {{currentPH}}</h4>
     <img style="height:128px" ng-src="{{bottle}}" alt="" />
 
     <div>
@@ -16,6 +24,9 @@
             <span ng-if="!increaseDisabled">Echar jugo</span>
             <span ng-if="increaseDisabled">Se acabó el jugo :(</span>
         </md-button>
+    </div>
+    <div class="md-body-2">
+        (Agregar mililitros de agente titulante)
     </div>
 
 </md-content>

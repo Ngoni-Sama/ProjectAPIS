@@ -11,7 +11,7 @@ app.controller("PlayCtrl", function($scope, $state, $stateParams, $mdDialog){
     console.log($stateParams);
 
     $scope.labels = [];
-    $scope.series = ['pH'];
+    $scope.series = [];
     $scope.data = [ [] ];
     $scope.increaseDisabled = false;
     $scope.bottle = "/app/img/chemistry-flash-hi.png";
@@ -59,7 +59,7 @@ app.controller("PlayCtrl", function($scope, $state, $stateParams, $mdDialog){
         };
     }
 
-    showDialog();
+    //showDialog();
 
     $scope.data[0].push(juicePH.pop());
     $scope.labels.push(juiceLabels.pop());
