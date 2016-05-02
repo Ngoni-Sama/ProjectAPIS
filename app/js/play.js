@@ -27,14 +27,6 @@ app.controller("PlayCtrl", function($scope, $state, $stateParams, $mdDialog){
         }
         if(value == juiceEqPoint){
             $scope.bottle = "/app/img/chemistry-flash-blue.png"
-            // $mdDialog.show(
-            //     $mdDialog.alert()
-            //         .parent(angular.element(document.querySelector('#body')))
-            //         .clickOutsideToClose(false)
-            //         .title('Punto de Equivalencia = ' + juiceEqPoint)
-            //         .textContent('¡Hemos llegado al punto de equivalencia! YESSS (aquí va una explicación mejor que aún no está pero va a estar)')
-            //         .ok('Aceptar')
-            //     );
             showDialog();
         }
     };
@@ -44,7 +36,7 @@ app.controller("PlayCtrl", function($scope, $state, $stateParams, $mdDialog){
             controller: DialogController,
             templateUrl: 'app/html/eq_dialog.html',
             parent: angular.element(document.body),
-            clickOutsideToClose:true,
+            clickOutsideToClose:false,
         });
     };
     function DialogController($scope, $mdDialog) {
