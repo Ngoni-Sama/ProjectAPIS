@@ -14,15 +14,15 @@
 </md-content>
 
 <md-content layout-padding layout="column" flex="35" layout-align="center center" class="md-whiteframe-z2 main-container">
-    <h1 class="md-display-3">Échale jugo</h1>
+    <h1 class="md-display-3">Échale NaOH</h1>
 
     <h4 class="md-title">pH Actual: {{currentPH}}</h4>
     <img style="height:128px" ng-src="{{bottle}}" alt="" />
 
     <div>
         <md-button class="md-raised md-primary" ng-click="increase()" ng-disabled="increaseDisabled">
-            <span ng-if="!increaseDisabled">Echar jugo</span>
-            <span ng-if="increaseDisabled">Se acabó el jugo :(</span>
+            <span ng-if="!increaseDisabled">Echar N<span style="text-transform:lowercase">a</span>OH</span>
+            <span ng-if="increaseDisabled">Se acabó el N<span style="text-transform:lowercase">a</span>OH :(</span>
         </md-button>
     </div>
     <div class="md-body-2">
