@@ -27,6 +27,18 @@ h1 {
     right: 8px;
     bottom: 8px;
 }
+.artificial-positioning {
+    background: black;
+    color: rgb(250, 250, 250);
+    border-radius: 50%;
+    position: absolute;
+    font-size: 24px;
+    width: 36px;
+    height: 36px;
+    font-size: 36px;
+    right: 40px;
+    bottom: 45px;
+}
 
 .main-container {
     margin: 16px;
