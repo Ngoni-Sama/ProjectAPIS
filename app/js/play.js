@@ -26,7 +26,7 @@ app.controller("PlayCtrl", function($scope, $state, $stateParams, $mdDialog){
             $scope.increaseDisabled = true;
         }
         if(value == juiceEqPoint){
-            $scope.bottle = "/app/img/chemistry-flash-blue.png"
+            $scope.bottle = "/img/chemistry-flash-blue.png"
             showDialog('app/html/eq_dialog.html');
         }
     };
