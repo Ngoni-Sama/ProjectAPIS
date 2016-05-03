@@ -16,17 +16,20 @@
 <md-content layout-padding layout="column" flex="35" layout-align="center center" class="md-whiteframe-z2 main-container">
     <h1 class="md-display-3">Échale NaOH</h1>
 
-    <h4 class="md-title">pH Actual: {{currentPH}}</h4>
+    <h1 class="md-title">Jugo seleccionado: {{juice.name}}</h1>
+    <h1 class="md-title">pH Actual: {{currentPH}}</h1>
+    <h1 class="md-title" style="text-align:center;" ng-if="increaseDisabled">Concentración de ácido cítrico en 100ml: {{juice.citric}}g</h1>
     <img style="height:128px" ng-src="{{bottle}}" alt="" />
 
-    <div>
+    <div layout="row" layout-align="center center">
         <md-button class="md-raised md-primary" ng-click="increase()" ng-disabled="increaseDisabled">
+            <md-tooltip md-direction="bottom">
+                (Agregar mililitros de agente titulante)
+            </md-tooltip>
             <span ng-if="!increaseDisabled">Echar N<span style="text-transform:lowercase">a</span>OH</span>
             <span ng-if="increaseDisabled">Se acabó el N<span style="text-transform:lowercase">a</span>OH :(</span>
         </md-button>
-    </div>
-    <div class="md-body-2">
-        (Agregar mililitros de agente titulante)
+        <md-button class="md-raised md-accent" ui-sref="/">Salir</md-button>
     </div>
 
 </md-content>

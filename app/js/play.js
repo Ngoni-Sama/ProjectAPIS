@@ -7,6 +7,7 @@ app.controller("PlayCtrl", function($scope, $state, $stateParams, $mdDialog){
     var juicePH = $stateParams.juice.juicePH;
     var juiceLabels = $stateParams.juice.juiceLabels;
     var juiceEqPoint = $stateParams.juice.juiceEqPoint;
+    $scope.juice = $stateParams.juice;
 
     console.log($stateParams);
 
@@ -22,6 +23,10 @@ app.controller("PlayCtrl", function($scope, $state, $stateParams, $mdDialog){
         $scope.currentPH = value;
         $scope.data[0].push(value);
         $scope.labels.push(juiceLabels.pop());
+        if(value >= $scope.juice.final){
+            $scope.juice.final = 1000000;
+            showDialog("app/html/final_point_dialog.html");
+        }
         if(juicePH.length === 0){
             $scope.increaseDisabled = true;
         }
