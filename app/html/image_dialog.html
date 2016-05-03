@@ -1,10 +1,10 @@
 
 
-<md-dialog aria-label="Final de la Reacción" ng-cloak>
+<md-dialog ng-cloak>
     <form>
         <md-toolbar>
             <div class="md-toolbar-tools">
-                <h2>Final de la reacción</h2>
+                <h2></h2>
                 <span flex></span>
                 <md-button class="md-icon-button" ng-click="cancel()">
                     <md-icon class="material-icons">close</md-icon>
@@ -13,7 +13,7 @@
         </md-toolbar>
         <md-dialog-content layout-padding layout="row" layout-align="center center">
             <div class="md-dialog-content">
-                <img src="img/reaction_final.jpg" alt="" style="height:350px" />
+                <img ng-src="/img/{{img}}" alt="" style="height:350px" />
             </div>
         </md-dialog-content>
         <md-dialog-actions layout="row">

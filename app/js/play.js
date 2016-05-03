@@ -1,4 +1,4 @@
-app.controller("PlayCtrl", function($scope, $state, $stateParams, $mdDialog){
+app.controller("PlayCtrl", function($scope, $state, $stateParams, $mdDialog, $rootScope){
 
     if ($stateParams.juice == null) {
         $state.go("/");
@@ -15,7 +15,7 @@ app.controller("PlayCtrl", function($scope, $state, $stateParams, $mdDialog){
     $scope.series = [];
     $scope.data = [ [] ];
     $scope.increaseDisabled = false;
-    $scope.bottle = "/img/chemistry-flash-hi.png";
+    $scope.bottle = "/img/"+$scope.juice.bottle;
     $scope.currentPH = juicePH[juicePH.length-1];
 
     $scope.increase = function(){
@@ -25,7 +25,7 @@ app.controller("PlayCtrl", function($scope, $state, $stateParams, $mdDialog){
         $scope.labels.push(juiceLabels.pop());
         if(value >= $scope.juice.final){
             $scope.juice.final = 1000000;
-            showDialog("app/html/final_point_dialog.html");
+            showDialog("app/html/image_dialog.html","reaction_final.jpg");
         }
         if(juicePH.length === 0){
             $scope.increaseDisabled = true;
@@ -36,9 +36,12 @@ app.controller("PlayCtrl", function($scope, $state, $stateParams, $mdDialog){
         }
     };
 
-    function showDialog(template) {
+    function showDialog(template,image) {
+        var scope = $rootScope.$new();
+        scope.img = image;
         $mdDialog.show({
             controller: DialogController,
+            scope: scope,
             templateUrl: template,
             parent: angular.element(document.body),
             clickOutsideToClose:false,
@@ -56,7 +59,7 @@ app.controller("PlayCtrl", function($scope, $state, $stateParams, $mdDialog){
         };
     }
 
-    showDialog("app/html/start_dialog.html");
+    showDialog("app/html/start_dialog.html",null);
 
     $scope.data[0].push(juicePH.pop());
     $scope.labels.push(juiceLabels.pop());
