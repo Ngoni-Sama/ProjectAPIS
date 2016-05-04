@@ -15,7 +15,7 @@ app.controller("PlayCtrl", function($scope, $state, $stateParams, $mdDialog, $ro
     $scope.series = [];
     $scope.data = [ [] ];
     $scope.increaseDisabled = false;
-    $scope.bottle = "/img/"+$scope.juice.bottle;
+    $scope.bottle = "img/"+$scope.juice.bottle;
     $scope.currentPH = juicePH[juicePH.length-1];
 
     $scope.increase = function(){
@@ -31,7 +31,7 @@ app.controller("PlayCtrl", function($scope, $state, $stateParams, $mdDialog, $ro
             $scope.increaseDisabled = true;
         }
         if(value == juiceEqPoint){
-            $scope.bottle = "/img/chemistry-flash-blue.png"
+            $scope.bottle = "img/chemistry-flash-blue.png"
             showDialog('app/html/eq_dialog.html');
         }
     };
